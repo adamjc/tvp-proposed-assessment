@@ -2,9 +2,13 @@
 
 ## Problem
 
-Many candidates get stuck in the current game of life assessment where they have to implement a function that generates the next state of the game. This scenario is quite a jump from the previous four (if/else conditionals), which do not test the candidates problem solving capabilities.
+Many candidates get stuck in the current game of life assessment where they have to implement a function that generates the next state of the game. This scenario is quite a jump from the previous four (they are simple if/else conditionals).
 
-It is also not an accurate representation of the work we currently do in TVP.
+This is a problem because of the following reasons:
+
+- At this point in the exercise we have not really challenged the candidate
+- We do not get a look into how they would approach the 'actual' scenarios algorithmically (we have to ask them this at the end of the assessment, and we only get 5 minutes for this section)
+- It is not an accurate representation of the work we currently do in TVP.
 
 ## Proposal
 
