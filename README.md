@@ -53,7 +53,12 @@ These notes the candidate makes will have the advantage of giving us more eviden
 ```
 
 ### Example Given
-`/get-all-meta => [{title: a, duration: 90, ...}, ...]`
+- Given a video service
+- When I go to /get-all-meta
+- I get a list of all the meta data available
+
+`api: /get-all-meta => [{title: a, duration: 90, ...}, ...]`
+
 * We can use this as a sample answer to give the candidate an example of what is expected of them
 
 ### Scenario 1
