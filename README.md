@@ -18,6 +18,7 @@ These notes the candidate makes will have the advantage of giving us more eviden
 
 **Work in Progress**
 
+```
 // video-meta.json
 [{
   title: a,
@@ -35,7 +36,9 @@ These notes the candidate makes will have the advantage of giving us more eviden
   categories: ['comedy', 'action'],
   related: ['b']
 }]
+```
 
+```
 // video-ids.json
 [{
   title: a,
@@ -47,27 +50,36 @@ These notes the candidate makes will have the advantage of giving us more eviden
   title: c,
   videoId: "eaef6c"
 }]
+```
 
-/get-all-meta => [{title: a}, ...]
-* We can use this as a sample answer to give the candidate a grounding of what is expected of them
+### Example Given
+`/get-all-meta => [{title: a}, ...]`
+* We can use this as a sample answer to give the candidate an example of what is expected of them
 
-/get-meta/a => {title :a}
+### Scenario 1
+`/get-meta/a => {title :a}`
 * Simple question to ease the candidate in
 
-/get-mean-duration => 92
+### Scenario 2
+`/get-mean-duration => 92`
 * Did they use reduce?
 
-/get-all-categories => ['comedy', 'thriller', 'action']
+### Scenario 3
+`/get-all-categories => ['comedy', 'thriller', 'action']`
 * Did they use map?
 
-/get-categories?categories=comedy,action => [{title: c}]
+### Scenario 4
+`/get-categories?categories=comedy,action => [{title: c}]`
 * A slightly more complicated query, get all films that satisfy both categories
 
-/get-related?related=a,c => [{title: b}]
+### Scenario 5
+`/get-related?related=a,c => [{title: b}]`
 * A slightly more complicated query, get all films that are related to both a and c
 
-/get-video/a => [{title: a, duration: 100, videoId: "1f88f3bda33cc6d3984345930e23ee0c7af2ce16", categories: ['action']}]
+### Scenario 6
+`/get-video/a => [{title: a, duration: 100, videoId: "1f88f3", categories: ['action']}]`
 * Combining two json feeds together, more complicated query.
 
-/get-all-videos => [{title: a, videoId: "1f88f3", duration: 100}, ...]
+### Scenario 7
+`/get-all-videos => [{title: a, videoId: "1f88f3", duration: 100}, ...]`
 * Same as above, but for all videos
