@@ -57,29 +57,65 @@ These notes the candidate makes will have the advantage of giving us more eviden
 * We can use this as a sample answer to give the candidate an example of what is expected of them
 
 ### Scenario 1
-`/get-meta/a => {title :a, duration: 90, ...}`
-* Simple question to ease the candidate in
+- Given a video service
+- When I go to /get-meta/a
+- I get the meta data for item a
+
+`api: /get-meta/a => {title :a, duration: 90, ...}`
+
+*This should be a simple question to ease the candidate in*
 
 ### Scenario 2
-`/get-mean-duration => 92`
-* Did they use reduce?
+- Given a video service
+- When I go to /get-mean-duration
+- I should receive the mean duration of all videos
+
+`api: /get-mean-duration => 92`
+
+*Did they use reduce?*
 
 ### Scenario 3
-`/get-all-categories => ['comedy', 'thriller', 'action']`
-* Did they use map?
+- Given a video service
+- When I go to /get-all-categories
+- I should receive a list of all of the categories available
+
+`api: /get-all-categories => ['comedy', 'thriller', 'action']`
+
+*Did they use map?*
 
 ### Scenario 4
-`/get-categories?categories=comedy,action => [{title: c}]`
-* A slightly more complicated query, get all films that satisfy both categories
+- Given a video service
+- When I go to /get-categories?categories=comedy,action
+- I should get a list of all videos that satisfy all categories
+
+`api: /get-categories?categories=comedy,action => [{title: c}]`
+
+*A slightly more complicated query, get all films that satisfy both categories*
 
 ### Scenario 5
-`/get-related?related=a,c => [{title: b}]`
-* A slightly more complicated query, get all films that are related to both a and c
+- Given a video service
+- When I go to /get-related?related=a,c
+- I should get a list of videos that are related to all video ids in the query
+
+`api: /get-related?related=a,c => [{title: b}]`
+
+*A slightly more complicated query, get all films that are related to both a and c*
 
 ### Scenario 6
-`/get-video/a => [{title: a, duration: 100, videoId: "1f88f3", categories: ['action']}]`
-* Combining two json feeds together, more complicated query.
+- Given a video service
+- When I go to /get-video/a
+- And the video id is available in both feeds
+- I should receive all information relating to video a, from both the video-meta and video-ids feed
+
+`api: /get-video/a => [{title: a, duration: 100, videoId: "1f88f3", categories: ['action']}]`
+
+*Combining two json feeds together, more complicated query.*
 
 ### Scenario 7
-`/get-all-videos => [{title: a, videoId: "1f88f3", duration: 100}, ...]`
-* Same as above, but for all videos
+- Given a video service
+- When I go to /get-all-videos
+- I should receive a list of all information for all videos available in both the video-meta and video-ids feed
+
+`api: /get-all-videos => [{title: a, videoId: "1f88f3", duration: 100}, ...]`
+
+*Same as above, but for all videos*
