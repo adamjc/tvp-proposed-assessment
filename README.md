@@ -53,11 +53,11 @@ These notes the candidate makes will have the advantage of giving us more eviden
 ```
 
 ### Example Given
-`/get-all-meta => [{title: a}, ...]`
+`/get-all-meta => [{title: a, duration: 90, ...}, ...]`
 * We can use this as a sample answer to give the candidate an example of what is expected of them
 
 ### Scenario 1
-`/get-meta/a => {title :a}`
+`/get-meta/a => {title :a, duration: 90, ...}`
 * Simple question to ease the candidate in
 
 ### Scenario 2
