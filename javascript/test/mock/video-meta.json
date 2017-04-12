@@ -1,0 +1,16 @@
+[{
+  "title": "a",
+  "duration": 100,
+  "categories": ["comedy", "thriller"],
+  "related": ["c"]
+}, {
+  "title": "b",
+  "duration": 90,
+  "categories": ["action"],
+  "related": ["a", "c"]
+}, {
+  "title": "c",
+  "duration": 86,
+  "categories": ["comedy", "action"],
+  "related": ["b"]
+}]
