@@ -1,23 +1,25 @@
 const expect = require('chai').expect
+const request = require('request-promise-native')
 const nock = require('nock')
-const fetch = require('node-fetch')
 const videoMeta = require('./mock/video-meta.json')
+const app = require('../app.js')
 
-const baseUrl = 'http://localhost:8080'
+const baseUrl = 'http://localhost:3000'
 
 describe('/get-all-meta', () => {
   before(function() {
-    // Start server
-  });
+    app.start()
+  })
 
   it('returns the entire list in video-meta.json', (done) => {
     var scope = nock('http://www.example.com')
-    .get('/video-meta')
-    .reply(200, 'path matched');
+      .get('/video-meta')
+      .reply(200, videoMeta)
 
-    fetch(`${baseUrl}/get-all-meta`).then(res => {
-      expect(res).to.deep.equal(videoMeta)
-      done()
-    }).catch(e => console.log(e))
+    request(`${baseUrl}/get-all-meta`)
+      .then(function (res) {
+        expect(JSON.parse(res)).to.deep.equal(videoMeta)
+        done()
+      }).catch(e => console.log(e))
   })
 })

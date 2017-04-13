@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "node start.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,11 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "nock": "^9.0.13",
-    "node-fetch": "^1.6.3"
+    "nock": "^9.0.13"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.3"
   }
 }
